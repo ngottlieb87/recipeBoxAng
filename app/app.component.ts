@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
     <div class="row">
       <div class="col-sm-3">
           <ul class="list-group">
-            <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item}}<button (click)="removeIngredient(item)">remove</button></li>
+            <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item}}</li>
           </ul>
       </div>
     </div>
@@ -55,10 +55,6 @@ export class AppComponent {
     new Recipe('Noah\'s Sticky Finger Chicken Wangs', 'cook the dang chuk\'n')
   ]
 
-  removeIngredient(item) {
-    let index = item.indexOf();
-    this.items[index] = "";
-  }
   isDone(recipe){
     if(recipe.done === true){
       recipe.done = false;
