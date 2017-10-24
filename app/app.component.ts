@@ -10,13 +10,13 @@ import { Component } from '@angular/core';
     </div>
 
     <div *ngIf = "displayRecipe">
-    <div class ="well" droppable (onDrop)="onItemDrop($event, displayRecipe)">
+    <div id="well1" class ="well" droppable (onDrop)="onItemDrop($event, displayRecipe)">
       <h3>DROP FOODS TO HERE</h3>
     </div>
     <div *ngFor="let ingredient of displayRecipe.ingredients" class="list-group-item">
       <p>{{ingredient}}</p>
     </div>
-    <p>{{displayRecipe.steps}}</p>
+    <li>{{displayRecipe.steps}}</li>
     <input [(ngModel)]="displayRecipe.name">
     <button (click)= "eraseIngredients(displayRecipe)">Erase Ingredients</button>
     <button (click)= "hideRecipe(displayRecipe)">Hide</button>
@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
     <div class="row">
       <div class="col-sm-3">
           <ul class="list-group">
-            <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item}}</li>
+            <li id="ingChoose" draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item}}</li>
           </ul>
       </div>
     </div>
